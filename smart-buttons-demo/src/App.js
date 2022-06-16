@@ -25,7 +25,10 @@ function App() {
   return (
     <div className="app">
       <div className="wrapper">
-        <input type = "number" onChange = {e => setPrice(e.target.value)} value = {price}/>
+        <div className= "title">
+          <h2>Smart Buttons Demo</h2>
+        </div>
+        <input type = "number" editable={false} selectTextOnFocus={false} className = "input" placeholder="Enter amount" min = "0" max = "10"  onChange = {e => setPrice(e.target.value)} value = {price}/>
         <PayPalButton
           createOrder={(data, actions) => createOrder(data, actions)}
           onApprove={(data, actions) => onApprove(data, actions)}
